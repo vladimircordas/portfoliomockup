@@ -1,0 +1,13 @@
+<div class="right-side-content">
+    <div id="gallery-btns" class="fix-up">
+
+        <a id="logo-anim" [routerLink]="['./logos']" [routerLinkActive]="['active']" (click)="exp = !exp">Logos</a>
+        <a id="busi-anim" [routerLink]="['./businesscards']" [routerLinkActive]="['active']" (click)="exp = !exp">Business Cards</a>
+        <a id="book-anim" [routerLink]="['./bookillustrations']" [routerLinkActive]="['active']" (click)="exp = !exp">Book Illustrations</a>
+        <a id="illu-anim" [routerLink]="['./illustrations']" [routerLinkActive]="['active']" (click)="exp = !exp">Illustrations</a>
+
+    </div>
+    <div class="galleries-container" [@animateGallery]="exp">
+        <router-outlet #appOutlet="outlet"></router-outlet>
+    </div>
+</div>
