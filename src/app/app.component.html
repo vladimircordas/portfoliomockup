@@ -1,9 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="main-container">
-    <app-leftside></app-leftside>
-    <div class="right-side">
-        <app-topbar></app-topbar>
-        <app-rightside>
-        </app-rightside>
-    </div>
+<div class="introMainAnimate" [@introMainAnimate]="introMainPage(appOutlet)">
+    <router-outlet #appOutlet="outlet"></router-outlet>
 </div>

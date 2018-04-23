@@ -4,23 +4,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { LeftsideComponent } from './leftside/leftside.component';
-import { RightsideComponent } from './rightside/rightside.component';
-import { TopbarComponent } from './topbar/topbar.component';
+import { LeftsideComponent } from './main/leftside/leftside.component';
+import { RightsideComponent } from './main/rightside/rightside.component';
+import { TopbarComponent } from './main/topbar/topbar.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { MyworkComponent } from './mywork/mywork.component';
-import { ContactComponent } from './contact/contact.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { AboutComponent } from './main/rightside/about/about.component';
+import { MyworkComponent } from './main/rightside/mywork/mywork.component';
+import { ContactComponent } from './main/rightside/contact/contact.component';
 
-import { GallerylogosComponent } from './gallerylogos/gallerylogos.component';
-import { GallerybusinesscComponent } from './gallerybusinessc/gallerybusinessc.component';
-import { GallerybookiluComponent } from './gallerybookilu/gallerybookilu.component';
-import { GalleryillustrationsComponent } from './galleryillustrations/galleryillustrations.component';
+import { GallerylogosComponent } from './main/rightside/mywork/gallerylogos/gallerylogos.component';
+import { GallerybusinesscComponent } from './main/rightside/mywork/gallerybusinessc/gallerybusinessc.component';
+import { GallerybookiluComponent } from './main/rightside/mywork/gallerybookilu/gallerybookilu.component';
+import { GalleryillustrationsComponent } from './main/rightside/mywork/galleryillustrations/galleryillustrations.component';
 
 import { NgxGalleryModule } from 'ngx-gallery';
 import { trigger, style, transition, animate, group } from '@angular/animations';
+import { IntroComponent } from './intro/intro.component';
+import { MainComponent } from './main/main.component';
+import { GallerydisneyprincessComponent } from './main/rightside/mywork/gallerydisneyprincess/gallerydisneyprincess.component';
+import { GalleryotherworkComponent } from './main/rightside/mywork/galleryotherwork/galleryotherwork.component';
+import { GalleryoldportfolioComponent } from './main/rightside/mywork/galleryoldportfolio/galleryoldportfolio.component';
+
 
 @NgModule({
   declarations: [
@@ -28,24 +34,29 @@ import { trigger, style, transition, animate, group } from '@angular/animations'
     LeftsideComponent,
     RightsideComponent,
     TopbarComponent,
-    HomeComponent,
     AboutComponent,
     MyworkComponent,
     ContactComponent,
     GallerylogosComponent,
     GallerybusinesscComponent,
     GallerybookiluComponent,
-    GalleryillustrationsComponent
+    GalleryillustrationsComponent,
+    IntroComponent,
+    MainComponent,
+    GallerydisneyprincessComponent,
+    GalleryotherworkComponent,
+    GalleryoldportfolioComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxGalleryModule,
+    TooltipModule.forRoot(),
     AlertModule.forRoot(),
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
-   
   ],
   providers: [],
   bootstrap: [AppComponent]
