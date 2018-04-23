@@ -1,0 +1,244 @@
+    .right-side-content {
+        width: 100%;
+        min-height: calc(100vh - 130px);
+        height: calc(100vh - 130px);
+        background: white;
+        position: relative;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color=#000000)";
+        /*IE 8*/
+        -moz-box-shadow: -5px 0 10px 5px rgba(0, 0, 0, 0.5);
+        /*FF 3.5+*/
+        -webkit-box-shadow: -5px 0 10px 5px rgba(0, 0, 0, 0.5);
+        /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+        box-shadow: -5px 0 10px 5px rgba(0, 0, 0, 0.5);
+        /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+        display: grid;
+        align-items: center;
+    }
+    
+    p {
+        color: black;
+    }
+    
+     :host {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Bangers;
+        font-size: 2rem;
+        margin: 0 auto;
+        position: absolute;
+    }
+    
+    .btn-group {
+        display: block;
+        position: fixed;
+        top: 40px;
+        left: calc(50% - -70px);
+        min-width: 250px;
+        z-index: 3401;
+        margin: 0 auto;
+    }
+    
+    .btn.btn-primary.dropdown-toggle {
+        min-width: 250px;
+        background: #f2f2f2;
+        border: transparent;
+        color: black;
+        font-family: 'Space Mono', monospace;
+        font-weight: 500;
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .btn.btn-primary.dropdown-toggle:hover,
+    .btn.btn-primary.dropdown-toggle:active,
+    .btn.btn-primary.dropdown-toggle:focus {
+        background: #f2f2f2;
+        border: transparent;
+        box-shadow: none;
+    }
+    
+    .dropdown-menu {
+        min-width: 250px;
+        border: none;
+        border-radius: 0px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+        -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .dropdown-menu li a {
+        color: black;
+        font-family: 'Space Mono', monospace;
+    }
+    
+    app-gallerylogos {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    
+    .galleries-container {
+        width: 100%;
+    }
+    
+    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+        .right-side-content {
+            min-height: calc(100vh - 160px);
+            height: calc(100% - 160px);
+            display: block;
+        }
+    }
+    
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 3) {
+        .right-side-content {
+            min-height: calc(100vh - 140px);
+            height: calc(100% - 140px);
+            display: block
+        }
+        .center-content {
+            width: 80%;
+        }
+    }
+    
+    @media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: portrait) {
+        .right-side-content {
+            min-height: calc(100vh - 130px);
+            height: calc(100% - 130px);
+            display: block;
+            top: 5px;
+        }
+        .btn-group {
+            display: block;
+            position: fixed;
+            top: 80px;
+            left: calc(50% - 100px);
+            min-width: 200px;
+            z-index: 2999;
+            margin: 0 auto;
+        }
+        .btn.btn-primary.dropdown-toggle {
+            min-width: 200px;
+            color: black;
+            font-size: 18px;
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+    }
+    
+    @media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: landscape) {
+        .right-side-content {
+            min-height: calc(100vh - 130px);
+            height: calc(100% - 130px);
+            display: block;
+            padding: 5px;
+        }
+        .btn-group {
+            display: block;
+            position: fixed;
+            top: 80px;
+            left: calc(50% - 100px);
+            min-width: 200px;
+            z-index: 2999;
+            margin: 0 auto;
+        }
+        .btn.btn-primary.dropdown-toggle {
+            min-width: 200px;
+            font-size: 18px;
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+    }
+    
+    @media only screen and (min-device-width: 320px) and (max-device-height: 731px) and (min-resolution: 192dpi) and (orientation: portrait) {
+        .right-side-content {
+            min-height: calc(100vh - 140px);
+            height: calc(100% - 140px);
+            display: block;
+            top: 0px;
+        }
+    }
+    
+    @media only screen and (min-device-width: 320px) and (max-device-height: 731px) and (min-resolution: 192dpi) and (orientation: landscape) {
+        .right-side-content {
+            min-height: calc(100vh - 140px);
+            height: calc(100% - 140px);
+            display: block;
+            padding: 5px;
+        }
+    }
+    
+    @media only screen and (min-device-width: 1024px) and (max-device-height: 800px) and (orientation: landscape) {
+        .btn-group {
+            display: block;
+            position: fixed;
+            top: 40px;
+            left: calc(50% - -70px);
+            min-width: 200px;
+            z-index: 3401;
+            margin: 0 auto;
+        }
+        .btn.btn-primary.dropdown-toggle {
+            min-width: 200px;
+            font-size: 28px;
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+    }
+    
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) and (orientation: portrait) {
+        .right-side-content {
+            display: block;
+        }
+        .gallery-descript {
+            display: block;
+        }
+        .btn-group {
+            display: block;
+            position: fixed;
+            top: 40px;
+            left: calc(50% - 20px);
+            min-width: 200px;
+            z-index: 3401;
+            margin: 0 auto;
+        }
+        .btn.btn-primary.dropdown-toggle {
+            min-width: 200px;
+            font-size: 28px;
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+    }
+    
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) and (orientation: landscape) {
+        p {
+            font-size: 14px;
+        }
+        .right-side-content {
+            display: block;
+        }
+        .btn-group {
+            display: block;
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            min-width: 200px;
+            z-index: 3401;
+            margin: 0 auto;
+        }
+        .btn.btn-primary.dropdown-toggle {
+            min-width: 200px;
+            font-size: 28px;
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+    }

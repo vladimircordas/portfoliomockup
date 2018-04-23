@@ -1,0 +1,24 @@
+@media all and (max-width: 768px) and (max-height: 960px) {
+    body {
+        height: auto;
+    }
+    .left-side {
+        width: 100%;
+        padding: 0;
+        height: auto;
+    }
+    .portfolio-img {
+        display: none;
+    }
+    .right-side {
+        width: 100%;
+        height: calc(100% - 100px);
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .main-container {
+        grid-template-columns: 100%;
+        margin-top: 60px;
+    }
+}

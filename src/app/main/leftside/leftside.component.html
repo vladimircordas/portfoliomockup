@@ -1,0 +1,50 @@
+<div class="left-side" id="left-side">
+    <div class="content-container">
+        <div class="portfolio-img">
+            <img id="profile-picture" src="./assets/cv_image.png" />
+            <img id="profile-logo" src="./assets/logo2.svg" />
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" (click)="navClick()">
+            <div id="logoMob"><img src="./assets/logo2.svg"></div>
+            <button id="ham-menu" class="navbar-toggler navbar-toggle btn pull-right menu" type="button" data-toggle="collapse">
+            <span id="bars" class="bar" [class.animation]="wasClicked"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isCollapsed">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="about-btn" routerLink="about" routerLinkActive="active">
+                            <img src="./assets/about-top.svg" alt="about" id="about-top" class="slide-nav" />
+                            <img src="./assets/about-bottom.svg" alt="about" id="about-bottom" class="slide-nav" />
+                        </a>
+                        <svg class="lines"><rect width="100%" height="100%"></rect></svg>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="gallery-btn" routerLink="mywork" routerLinkActive="active">
+                            <img src="./assets/mywork-top.svg" alt="mywork" id="mywork-top" class="slide-nav" />
+                            <img src="./assets/mywork-bottom.svg" alt="mywork" id="mywork-bottom" class="slide-nav" />
+                        </a>
+                        <svg class="lines"><rect width="100%" height="100%"></rect></svg>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="contact-btn" routerLink="contact" routerLinkActive="active">
+                            <img src="./assets/contact-top.svg" alt="contact" id="contact-top" class="slide-nav" />
+                            <img src="./assets/contact-bottom.svg" alt="contact" id="contact-bottom" class="slide-nav" />
+                        </a>
+                        <svg class="lines"><rect width="100%" height="100%"></rect></svg>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="home-btn" [routerLink]="[ '/intro/']">
+                            <img src="./assets/home-top.svg" alt="intro" id="about-top" class="slide-nav" />
+                            <img src="./assets/home-bottom.svg" alt="intro" id="about-bottom" class="slide-nav" />
+                        </a>
+                        <svg class="lines"><rect width="100%" height="100%"></rect></svg>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+</div>

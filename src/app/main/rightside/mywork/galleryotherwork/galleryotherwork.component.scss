@@ -1,0 +1,28 @@
+:host {
+    display: block;
+}
+
+.gallery-container {
+    width: 90%;
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: portrait) {
+    .gallery-container {
+        width: 100%;
+        height: calc(100vh - 140px);
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: landscape) {
+    .gallery-container {
+        width: 100%;
+        height: calc(100vh - 140px);
+    }
+}
