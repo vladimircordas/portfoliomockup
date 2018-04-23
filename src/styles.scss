@@ -5,21 +5,55 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 body {
+    position: relative;
     padding: 25px;
     font-family: 'Space Mono', monospace;
     min-height: 100vh;
     height: auto;
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    background: white;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color=#000000)";
+    /*IE 8*/
+    -moz-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5) inset;
+    /*FF 3.5+*/
+    -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5) inset;
+    /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5) inset;
+    /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.fadeout {
+    opacity: 0;
+}
+
+.tooltip-inner {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    max-width: 350px;
+    min-width: 150px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+    -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-animation: apear .3s linear;
+}
+
+.tooltip-arrow {
+    -webkit-animation: apear .3s linear;
 }
 
 .main-container {
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 20% 80%;
+    -ms-grid-columns: 20% 80%;
 }
 
 .right-side {
@@ -28,23 +62,769 @@ body {
     height: calc(100% - 50px);
     position: relative;
     display: block;
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+
+#left-side {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+
+
+/* MY WORK CSS */
+
+.gallery-container {
+    width: 90%;
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    display: block;
+    height: calc(100vh - 150px);
+}
+
+.vert-align-cont {
+    width: 100%;
+    position: relative;
+}
+
+.gallery-descript {
+    width: 50%;
+    height: 500px;
+    display: inline-block;
+    grid-column-start: 2;
+    padding: 25px;
+    align-items: center;
+    -webkit-perspective: 2500px;
+    perspective: 2500px;
+    -webkit-perspective-origin: calc(100% - 100%);
+    perspective-origin: calc(100% - 100%);
+}
+
+.gallery-descript p {
+    font-size: 16px;
+}
+
+.anim-container {
+    display: grid;
+    display: -ms-grid;
+    justify-items: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: space-evenly;
+    align-content: space-evenly;
+    -ms-grid-rows: 2fr;
+    -ms-grid-row-align: center;
+    grid-column-start: 2;
+    padding: 25px;
+    align-items: center;
+    background: #f2f2f2;
+    transition: .7s -webkit-transform ease-in-out;
+    transition: .7s transform ease-in-out;
+    transition: .7s transform ease-in-out, .7s -webkit-transform ease-in-out;
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+    -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+}
+
+.gallery-descript h2 {
+    -ms-grid-row: 1;
+}
+
+.gallery-descript p {
+    -ms-grid-row: 2;
+    font-size: 16px;
+}
+
+.gallery-descript p:last-child {
+    -ms-grid-row: 3;
+}
+
+.gallery-descript dl {
+    -ms-grid-row: 4;
+}
+
+.showMe {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.gallery-descript h2,
+.gallery-descript p,
+.gallery-descript dl {
+    color: black;
+    font-family: 'Space Mono', monospace;
+}
+
+.ngx-gallery-arrow-wrapper.ngx-gallery-arrow-left .ngx-gallery-icon.ngx-gallery-arrow {
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg)!important;
+    background: transparent;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.ngx-gallery-arrow-wrapper.ngx-gallery-arrow-right .ngx-gallery-icon.ngx-gallery-arrow {
+    width: 50px;
+    height: 50px;
+    transform: rotate(135deg)!important;
+    background: transparent;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.triangle-left {
+    width: 0px;
+    height: 50px;
+    border: 0px;
+    background: black;
+    transition: all .3s ease;
+}
+
+.ngx-gallery-icon.ngx-gallery-arrow:hover .triangle-left {
+    width: 50px;
+}
+
+.triangle-right {
+    width: 0px;
+    height: 50px;
+    border: 0px;
+    background: black;
+    transition: all .3s ease;
+}
+
+.ngx-gallery-icon.ngx-gallery-arrow:hover .triangle-right {
+    width: 50px;
+}
+
+.ngx-gallery-arrow {
+    /*    color: white;
+    background: black;
+    border-radius: 100px;   */
+    top: calc(50% - 25px) !important;
+}
+
+.hor-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+    transition: filter .3s ease-in-out;
+}
+
+.hor-align:hover {
+    -ms-filter: grayscale(0.2);
+    -webkit-filter: grayscale(0.2);
+    -moz-filter: grayscale(0.2);
+    -o-filter: grayscale(0.2);
+    filter: grayscale(0.2);
+}
+
+.image-container {
+    width: 50%;
+    height: 500px;
+    overflow: hidden;
+    background: black;
+    z-index: 100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+    -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    margin-right: -5px;
+    z-index: 100;
+}
+
+.image-container img {
+    width: auto;
+    height: 500px;
+}
+
+dt a {
+    color: darkred;
+}
+
+
+/* MODAL */
+
+#myImg {
+    border-radius: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 1;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 9999;
+    /* Sit on top */
+    padding-top: 50px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: hidden;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content (Image) */
+
+.modal-content {
+    display: block;
+    border-radius: 0;
+    max-width: 90%;
+    height: auto;
+    max-height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #ccc;
+    font-family: 'Space Mono', monospace;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    height: auto;
+}
+
+
+/* Add Animation - Zoom in the Modal */
+
+
+/*
+.modal-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+*/
+
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    line-height: 24px;
+    opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 90%;
+        height: auto;
+        max-height: 90%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    #caption {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        height: auto;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: landscape) {
+    .anim-container {
+        display: block;
+    }
+    .anim-container p,
+    .anim-container dl {
+        font-size: 14px;
+    }
+    .gallery-container {
+        width: 100%;
+        height: calc(100vh - 140px);
+    }
+    .showMe {
+        overflow-y: scroll;
+    }
+    .image-container,
+    .gallery-descript {
+        height: calc(100vh - 150px);
+    }
+    .image-container img {
+        width: auto;
+        height: calc(100vh - 150px);
+        display: inline-block;
+    }
+    .modal {
+        padding-top: 10px;
+    }
+    .close {
+        top: 10px;
+        right: 10px;
+        line-height: 24px;
+        opacity: 1
+    }
+    .modal-content {
+        width: 80%;
+        height: auto;
+        height: 80%;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: portrait) {
+    .vert-align-cont {
+        padding: 5px;
+    }
+    .gallery-descript {
+        display: block;
+        width: 100%;
+        height: calc(50vh - 75px);
+        -webkit-perspective: 2500px;
+        perspective: 2500px;
+        -webkit-perspective-origin: calc(100% - 50%);
+        perspective-origin: calc(100% - 50%);
+    }
+    .gallery-container {
+        width: 100%;
+        height: calc(100vh - 140px);
+    }
+    .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: calc(50vh - 75px);
+        text-align: center;
+    }
+    .image-container img {
+        width: auto;
+        height: calc(50vh - 60px);
+        display: inline-block;
+    }
+    .anim-container p,
+    .anim-container dl {
+        font-size: 14px;
+    }
+    .anim-container {
+        display: block;
+        -webkit-transform: rotatex(87deg);
+        transform: rotatex(87deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+        -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        padding-bottom: 50px;
+    }
+    .showMe {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        overflow-y: scroll;
+    }
+    .close {
+        opacity: 1;
+        line-height: 24px;
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .gallery-descript {
+        display: block;
+        width: 100%;
+        height: 400px;
+    }
+    .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        text-align: center;
+    }
+    .image-container img {
+        width: auto;
+        height: 400px;
+        display: inline-block;
+    }
+    .anim-container p,
+    .anim-container dl {
+        font-size: 14px;
+    }
+    .gallery-descript {
+        -webkit-perspective: 2500px;
+        perspective: 2500px;
+        -webkit-perspective-origin: calc(100% - 50%);
+        perspective-origin: calc(100% - 50%);
+    }
+    .anim-container {
+        -webkit-transform: rotatex(87.1deg);
+        transform: rotatex(87.1deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+        -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .showMe {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .anim-container p,
+    .anim-container dl {
+        font-size: 14px;
+    }
+    .close {
+        opacity: 1;
+        line-height: 24px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1279px) {
+    .gallery-container {
+        width: 90%;
+        margin: 0 auto;
+        background: white;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 150px);
+    }
+    .vert-align-cont {
+        width: 100%;
+        position: relative;
+    }
+    .gallery-descript {
+        width: 50%;
+        height: 500px;
+        display: inline-block;
+        grid-column-start: 2;
+        padding: 25px;
+        align-items: center;
+        -webkit-perspective: 2500px;
+        perspective: 2500px;
+        -webkit-perspective-origin: calc(100% - 100%);
+        perspective-origin: calc(100% - 100%);
+    }
+    .anim-container {
+        display: grid;
+        grid-column-start: 2;
+        padding: 25px;
+        align-items: center;
+        background: #f2f2f2;
+        transition: .7s -webkit-transform ease-in-out;
+        transition: .7s transform ease-in-out;
+        transition: .7s transform ease-in-out, .7s -webkit-transform ease-in-out;
+        -webkit-transform: rotateY(90deg);
+        transform: rotateY(90deg);
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+        -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .showMe {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    .gallery-descript h2,
+    .gallery-descript p,
+    .gallery-descript dl {
+        color: black;
+        font-family: 'Space Mono', monospace;
+    }
+    ngx-gallery /deep/ ngx-gallery-thumbnails .ngx-gallery-arrow {
+        color: white;
+        background: black;
+        border-radius: 100px;
+    }
+    .image-container {
+        width: 50%;
+        height: 500px;
+        overflow: hidden;
+        background: black;
+        z-index: 100;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Color=#000000)";
+        -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+        display: inline-block;
+        margin-right: -5px;
+        z-index: 100;
+    }
+    .image-container img {
+        width: auto;
+        height: 500px;
+    }
+    dt a {
+        color: darkred;
+    }
+    /* MODAL BS */
+    #myImg {
+        border-radius: 0;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    #myImg:hover {
+        opacity: 1;
+    }
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 9999;
+        /* Sit on top */
+        padding-top: 50px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: hidden;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Black w/ opacity */
+    }
+    /* Modal Content (Image) */
+    .modal-content {
+        display: block;
+        border-radius: 0;
+        max-width: 90%;
+        height: auto;
+        max-height: 90%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: 'Space Mono', monospace;
+        font-size: 16px;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        height: auto;
+        padding: 10px 0;
+    }
+    /* Add Animation - Zoom in the Modal */
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 1s;
+    }
+    @keyframes zoom {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        opacity: 1;
+        line-height: 24px;
+    }
+    .close i {
+        font-size: 24px;
+        color: white;
+    }
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+ngx-gallery {
+    display: block !important;
+    margin: 0 auto;
+}
+
+
+/*
+.ngx-gallery-icon.ngx-gallery-arrow {
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+
+ngx-gallery /deep/ .ngx-gallery-arrow {
+    color: black !important;
+    font-size: 48px!important;
+    line-height: 41px!important;
+}
+
+.ngx-gallery-icon .ngx-gallery-icon-content {
+    line-height: 41px!important;
+}
+*/
+
+.ngx-gallery-preview-text {
+    font-family: 'Space Mono', monospace;
 }
 
 .ngx-gallery-thumbnail {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%);
-    transition: all .3s ease-in-out;
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+    transition: all 0.33s ease-in-out;
 }
 
 .ngx-gallery-thumbnail:hover {
-    -webkit-filter: grayscale(0%);
-    -moz-filter: grayscale(0%);
-    -o-filter: grayscale(0%);
-    -ms-filter: grayscale(0%);
-    filter: grayscale(0%);
+    -ms-filter: grayscale(0.3);
+    -webkit-filter: grayscale(0.3);
+    -moz-filter: grayscale(0.3);
+    -o-filter: grayscale(0.3);
+    filter: grayscale(0.3);
+}
+
+@media only screen and (max-device-width: 1280px) and (min-device-width: 824px) {
+    .main-container {
+        grid-template-columns: 25% 75%;
+        -ms-grid-columns: 25% 75%;
+    }
+    .gallery-container {
+        width: 90%;
+        margin: 0 auto;
+        background: white;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 150px);
+    }
+    .image-container,
+    .image-container img,
+    .gallery-descript {
+        height: 400px;
+    }
 }
 
 @media all and (max-width: 768px) and (max-height: 1024px) {
@@ -70,10 +850,12 @@ body {
     html {
         height: auto;
     }
+    /*
     body {
         min-height: auto;
         height: 100%;
     }
+    */
     .main-container {
         display: block;
     }
@@ -114,5 +896,36 @@ body {
     }
     .collapse.in {
         display: block !important;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation: portrait) and (min-resolution: 192dpi) {
+    .navbar-collapse.collapse {
+        display: block !important;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: portrait) {
+    body {
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 823px) and (min-resolution: 192dpi) and (orientation: landscape) {
+    body {
+        padding: 15px;
+    }
+    .navbar-nav li {
+        margin: 12px 0 0 0 !important;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    body {
+        padding: 25px;
+    }
+    .right-side-component {
+        min-height: calc(100vh - 130px)!important;
+        height: calc(100% - 130px)!important;
     }
 }
